@@ -28,7 +28,7 @@ Python bindings to Rust's persistent data structures (rpds)
 
 # add rust'2s vendor
 #mkdir .cargo
-cp %{SOURCE2} .cargo/config
+#cp %{SOURCE2} .cargo/config
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
