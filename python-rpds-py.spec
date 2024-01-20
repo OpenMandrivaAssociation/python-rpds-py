@@ -7,7 +7,6 @@ Group:		Development/Python
 URL:		https://pypi.org/project/rpds-py/
 Source0:	https://pypi.org/packages/source/r/rpds_py/rpds_py-%{version}.tar.gz
 Source1:	vendor.tar.xz
-Source2:	cargo_config
 BuildRequires:  cargo
 BuildRequires:	python%{pyver}dist(maturin)
 BuildRequires:	python%{pyver}dist(pip)
@@ -25,10 +24,6 @@ Python bindings to Rust's persistent data structures (rpds)
 %prep
 %autosetup -p1 -n rpds_py-%{version} -a1 -p1
 %cargo_prep -v vendor
-
-# add rust'2s vendor
-#mkdir .cargo
-#cp %{SOURCE2} .cargo/config
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
