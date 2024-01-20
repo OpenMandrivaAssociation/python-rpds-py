@@ -24,7 +24,7 @@ Python bindings to Rust's persistent data structures (rpds)
 
 %prep
 %autosetup -p1 -n rpds_py-%{version} -a1 -p1
-#cargo_prep -v vendor
+%cargo_prep -v vendor
 
 # add rust'2s vendor
 mkdir .cargo
