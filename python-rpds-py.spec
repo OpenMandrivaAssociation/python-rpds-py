@@ -1,6 +1,6 @@
 Summary:	Python bindings to
 Name:		python-rpds-py
-Version:	0.17.1
+Version:	0.18.0
 Release:	1
 License:	MIT
 Group:		Development/Python
