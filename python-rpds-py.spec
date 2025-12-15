@@ -11,6 +11,9 @@ BuildSystem:	python
 BuildRequires:  cargo
 BuildRequires:	python%{pyver}dist(maturin)
 BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:  rust
+BuildRequires:  rust-src
+BuildRequires:  cargo
 #BuildRequires:	rust-packaging
 
 %description
@@ -24,7 +27,6 @@ Python bindings to Rust's persistent data structures (rpds)
 
 %prep
 %autosetup -p1 -n rpds_py-%{version} -a1 -p1
-%cargo_prep -v vendor
 
 %build -p
 export RUSTFLAGS="%{build_rustflags}"
