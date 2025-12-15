@@ -1,4 +1,6 @@
-Summary:	Python bindings to
+%undefine _debugsource_packages
+
+Summary:	Python bindings to Rust
 Name:		python-rpds-py
 Version:	0.30.0
 Release:	2
@@ -11,7 +13,10 @@ BuildSystem:	python
 BuildRequires:  cargo
 BuildRequires:	python%{pyver}dist(maturin)
 BuildRequires:	python%{pyver}dist(pip)
-BuildRequires:	rust-packaging
+BuildRequires:  rust
+BuildRequires:  rust-src
+BuildRequires:  cargo
+#BuildRequires:	rust-packaging
 
 %description
 Python bindings to Rust's persistent data structures (rpds)
@@ -24,8 +29,15 @@ Python bindings to Rust's persistent data structures (rpds)
 
 %prep
 %autosetup -p1 -n rpds_py-%{version} -a1 -p1
-%cargo_prep -v vendor
+mkdir -p .cargo
+cat >> .cargo/config.toml << EOF
+[source.crates-io]
+replace-with = "vendored-sources"
 
-%build -p
-export RUSTFLAGS="%{build_rustflags}"
-%cargo_build
+[source.vendored-sources]
+directory = "vendor"
+EOF
+
+#build -p
+#export RUSTFLAGS="%{build_rustflags}"
+cargo build
