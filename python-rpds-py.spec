@@ -27,7 +27,15 @@ Python bindings to Rust's persistent data structures (rpds)
 
 %prep
 %autosetup -p1 -n rpds_py-%{version} -a1 -p1
+mkdir -p .cargo
+cat >> .cargo/config.toml << EOF
+[source.crates-io]
+replace-with = "vendored-sources"
 
-#build -p
+[source.vendored-sources]
+directory = "vendor"
+EOF
+
+build -p
 #export RUSTFLAGS="%{build_rustflags}"
-#cargo build
+cargo build
