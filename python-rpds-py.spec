@@ -30,4 +30,4 @@ Python bindings to Rust's persistent data structures (rpds)
 
 %build -p
 export RUSTFLAGS="%{build_rustflags}"
-%cargo_build
+cargo build
