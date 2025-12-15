@@ -36,6 +36,6 @@ replace-with = "vendored-sources"
 directory = "vendor"
 EOF
 
-build -p
+#build -p
 #export RUSTFLAGS="%{build_rustflags}"
 cargo build
