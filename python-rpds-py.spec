@@ -1,4 +1,6 @@
-Summary:	Python bindings to
+%undefine _debugsource_packages
+
+Summary:	Python bindings to Rust
 Name:		python-rpds-py
 Version:	0.30.0
 Release:	2
