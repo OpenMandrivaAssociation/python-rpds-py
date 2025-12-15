@@ -11,7 +11,7 @@ BuildSystem:	python
 BuildRequires:  cargo
 BuildRequires:	python%{pyver}dist(maturin)
 BuildRequires:	python%{pyver}dist(pip)
-BuildRequires:	rust-packaging
+#BuildRequires:	rust-packaging
 
 %description
 Python bindings to Rust's persistent data structures (rpds)
