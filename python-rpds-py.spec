@@ -28,6 +28,6 @@ Python bindings to Rust's persistent data structures (rpds)
 %prep
 %autosetup -p1 -n rpds_py-%{version} -a1 -p1
 
-%build -p
-export RUSTFLAGS="%{build_rustflags}"
-cargo build
+#build -p
+#export RUSTFLAGS="%{build_rustflags}"
+#cargo build
