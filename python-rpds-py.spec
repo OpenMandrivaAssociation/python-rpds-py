@@ -2,12 +2,12 @@
 
 Summary:	Python bindings to Rust
 Name:		python-rpds-py
-Version:	0.30.0
-Release:	3
+Version:	2026.9.1
+Release:	1
 License:	MIT
 Group:		Development/Python
 URL:		https://pypi.org/project/rpds-py/
-Source0:	https://pypi.org/packages/source/r/rpds_py/rpds_py-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/r/rpds_py/rpds_py-%{version}.tar.gz
 Source1:	vendor.tar.xz
 BuildSystem:	python
 BuildRequires:  cargo
@@ -38,6 +38,5 @@ replace-with = "vendored-sources"
 directory = "vendor"
 EOF
 
-#build -p
-#export RUSTFLAGS="%{build_rustflags}"
-cargo build
+%build -p
+export CARGO_NET_OFFLINE=true
